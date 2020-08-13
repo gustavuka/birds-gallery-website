@@ -40,9 +40,9 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ["django_extensions"]
 
-PROJECT_APPS = []
+PROJECT_APPS = ["users", "photos"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
@@ -109,8 +109,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_files")]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -130,4 +131,4 @@ SITE_ID = 1
 # }
 
 # Auth
-# AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "users.User"

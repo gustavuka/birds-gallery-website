@@ -95,3 +95,10 @@ docker/db/pgdata/
 # Static Files
 static/
 .vscode/
+
+# Database
+*.sqlite3
+
+# Images
+*.jpg
+*.jpeg
