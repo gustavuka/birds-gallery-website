@@ -39,10 +39,16 @@ class City(TimeStampedModel):
         return self.name
 
 
-class Bird(TimeStampedModel):
+class Photo(TimeStampedModel):
+    AVES = "Aves"
+    PAISAGENS = "PAISAGENS"
+    MACRO = "MACRO"
+    category_choices = ((AVES, "Aves"), (PAISAGENS, "Paisagens"), (MACRO, "Macro"))
+
+    category = models.CharField(max_length=80, choices=category_choices)
     name = models.CharField(max_length=120)
     location = models.ForeignKey(City, on_delete=models.PROTECT)
-    species = models.CharField(max_length=120)
+    species = models.CharField(max_length=120, blank=True, null=True)
     author = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="author"
     )
