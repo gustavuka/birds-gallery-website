@@ -39,12 +39,18 @@ class City(TimeStampedModel):
         return self.name
 
 
-class Photo(TimeStampedModel):
+class Bird(TimeStampedModel):
     name = models.CharField(max_length=120)
-    # location = models.ForeignKey(City, on_delete=models.PROTECT)
+    location = models.ForeignKey(City, on_delete=models.PROTECT)
     species = models.CharField(max_length=120)
     author = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="author"
     )
     image = models.ImageField()
 
+    class Meta:
+        verbose_name = "Bird"
+        verbose_name_plural = "Birds"
+
+    def __str__(self):
+        return self.name

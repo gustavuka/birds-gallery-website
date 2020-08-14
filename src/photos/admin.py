@@ -1,5 +1,5 @@
 from django.contrib import admin
-from photos.models import Country, State, City, Photo
+from photos.models import Country, State, City, Bird
 
 
 @admin.register(Country)
@@ -16,6 +16,7 @@ class StateAdmin(admin.ModelAdmin):
 class CityAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(Photo)
+
+@admin.register(Bird)
 class PhotoAdmin(admin.ModelAdmin):
     pass

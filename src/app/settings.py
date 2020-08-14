@@ -40,7 +40,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["django_extensions"]
+THIRD_PARTY_APPS = ["django_extensions", "django_cleanup"]
 
 PROJECT_APPS = ["users", "photos"]
 
